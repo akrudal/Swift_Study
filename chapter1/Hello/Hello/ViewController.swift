@@ -12,12 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.navigationController?.navigationBar.topItem?.title=""
     }
 
 
-    @IBOutlet var uiTitle: UILabel!
-    @IBAction func sayHello(_ sender: Any) {
-        self.uiTitle.text="Hello, World!"
-    }
+    
 }
 
