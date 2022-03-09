@@ -44,6 +44,18 @@ class FoodController: UICollectionViewController{
         BestInfo(image: #imageLiteral(resourceName: "BHC치킨"), storeName: "BHC치킨", fee: "배달팁 0원~3,000원", time: "21~31분"),
     ]
     
+    let categoryItem = [
+        CategoryData(category: "배달 빠른 순"),
+        CategoryData(category: "배달팁 낮은 순"),
+        CategoryData(category: "기본순"),
+        CategoryData(category: "주문 많은 순"),
+        CategoryData(category: "별점 높은 순"),
+        CategoryData(category: "가까운 순"),
+        CategoryData(category: "찜 많은 순"),
+        CategoryData(category: "최소주문금액"),
+        CategoryData(category: "기타"),
+    ]
+    
     
     let storeData = [
         StoreInfo(image1: #imageLiteral(resourceName: "채선당1"), image2: #imageLiteral(resourceName: "채선당2"), image3: #imageLiteral(resourceName: "채선당3"), storeName: "채선당", rate: "4.9", orderFee: "26,000원", distance: "1.2km", fee: "무료"),
@@ -93,6 +105,18 @@ class FoodController: UICollectionViewController{
                     .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)),elementKind: categoryHeaderId,alignment: . topLeading)
                 ]
                 return section
+            } else if sectionNumber == 3 {
+                let item = NSCollectionLayoutItem.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                item.contentInsets.trailing = 8
+                
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.3), heightDimension: .absolute(50)), subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .continuous
+                section.contentInsets.leading = 16
+                section.contentInsets.top = 30
+
+                return section
             } else {
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 item.contentInsets.leading = 16
@@ -102,7 +126,6 @@ class FoodController: UICollectionViewController{
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(250)), subitems: [item])
                     
                 let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets.top = 30
                 return section
             }
         }
@@ -118,7 +141,7 @@ class FoodController: UICollectionViewController{
     static let categoryHeaderId = "categoryHeaderId"
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        4
+        5
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -128,6 +151,8 @@ class FoodController: UICollectionViewController{
             return 15
         } else if section == 2 {
             return 4
+        } else if section == 3 {
+            return 9
         } else {
             return 4
         }
@@ -150,7 +175,13 @@ class FoodController: UICollectionViewController{
             
             cellC.data=self.bestData[indexPath.row]
             return cellC
-        } else if indexPath.section == 3{
+        } else if indexPath.section == 3 {
+            let cellE = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! StoreCategoryCell
+            
+            cellE.data=self.categoryItem[indexPath.row]
+            return cellE
+            
+        } else if indexPath.section == 4 {
             let cellD = collectionView.dequeueReusableCell(withReuseIdentifier: "storeCell", for: indexPath) as! StoreCell
             
             cellD.data=self.storeData[indexPath.row]
@@ -179,6 +210,7 @@ class FoodController: UICollectionViewController{
         collectionView.register(BannerCell.self, forCellWithReuseIdentifier: "bannerCell")
         collectionView.register(MenuCell.self,forCellWithReuseIdentifier:"menuCell")
         collectionView.register(BestCell.self,forCellWithReuseIdentifier:"bestCell")
+        collectionView.register(StoreCategoryCell.self,forCellWithReuseIdentifier:"categoryCell")
         collectionView.register(StoreCell.self,forCellWithReuseIdentifier:"storeCell")
         collectionView.register(Header.self,forSupplementaryViewOfKind:FoodController.categoryHeaderId,withReuseIdentifier:headerId)
         

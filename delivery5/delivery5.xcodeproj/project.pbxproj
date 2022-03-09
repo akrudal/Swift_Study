@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A15213A27D89DB400D87365 /* StoreCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15213927D89DB400D87365 /* StoreCategoryCell.swift */; };
 		3A2417FD27D70C940013D156 /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2417FC27D70C940013D156 /* StoreCell.swift */; };
 		3A2417FF27D786080013D156 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2417FE27D786070013D156 /* HexColor.swift */; };
 		3ABCD7D927D0820900D2F673 /* delivery5App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABCD7D827D0820900D2F673 /* delivery5App.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A15213927D89DB400D87365 /* StoreCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCategoryCell.swift; sourceTree = "<group>"; };
 		3A2417FC27D70C940013D156 /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
 		3A2417FE27D786070013D156 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		3ABCD7D527D0820900D2F673 /* delivery5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = delivery5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,7 @@
 			children = (
 				3ABCD7D827D0820900D2F673 /* delivery5App.swift */,
 				3ABCD7DA27D0820900D2F673 /* ContentView.swift */,
+				3A15213927D89DB400D87365 /* StoreCategoryCell.swift */,
 				3A2417FC27D70C940013D156 /* StoreCell.swift */,
 				3ABCD7EA27D0F8BF00D2F673 /* BannerCell.swift */,
 				3ABCD7EC27D0F8CE00D2F673 /* MenuCell.swift */,
@@ -157,6 +160,7 @@
 				3ABCD7D927D0820900D2F673 /* delivery5App.swift in Sources */,
 				3ABCD7ED27D0F8CE00D2F673 /* MenuCell.swift in Sources */,
 				3ABCD7EF27D0F8D900D2F673 /* BestCell.swift in Sources */,
+				3A15213A27D89DB400D87365 /* StoreCategoryCell.swift in Sources */,
 				3ABCD7EB27D0F8BF00D2F673 /* BannerCell.swift in Sources */,
 				3A2417FD27D70C940013D156 /* StoreCell.swift in Sources */,
 			);
