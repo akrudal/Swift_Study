@@ -43,18 +43,7 @@ class FoodController: UICollectionViewController{
         BestInfo(image: #imageLiteral(resourceName: "빽다방"), storeName: "빽다방", fee: "배달팁 2,000원~2,900원", time: "20~30분"),
         BestInfo(image: #imageLiteral(resourceName: "BHC치킨"), storeName: "BHC치킨", fee: "배달팁 0원~3,000원", time: "21~31분"),
     ]
-    
-    let categoryItem = [
-        CategoryData(category: "배달 빠른 순"),
-        CategoryData(category: "배달팁 낮은 순"),
-        CategoryData(category: "기본순"),
-        CategoryData(category: "주문 많은 순"),
-        CategoryData(category: "별점 높은 순"),
-        CategoryData(category: "가까운 순"),
-        CategoryData(category: "찜 많은 순"),
-        CategoryData(category: "최소주문금액"),
-        CategoryData(category: "기타"),
-    ]
+
     
     
     let storeData = [
@@ -102,22 +91,17 @@ class FoodController: UICollectionViewController{
                 section.contentInsets.leading = 16
 
                 section.boundarySupplementaryItems = [
-                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)),elementKind: categoryHeaderId,alignment: . topLeading)
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)),elementKind: BestHeader.bestHeaderId,alignment: . topLeading)
                 ]
                 return section
-            } else if sectionNumber == 3 {
-                let item = NSCollectionLayoutItem.init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                item.contentInsets.trailing = 8
-                
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.3), heightDimension: .absolute(50)), subitems: [item])
-                
-                let section = NSCollectionLayoutSection(group: group)
-                section.orthogonalScrollingBehavior = .continuous
-                section.contentInsets.leading = 16
-                section.contentInsets.top = 30
-
-                return section
             } else {
+                
+                let pagingheader = NSCollectionLayoutBoundarySupplementaryItem(
+                  layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50)),
+                  elementKind: HeaderTabBar.tabBarHeaderId,
+                  alignment: .top)
+                pagingheader.pinToVisibleBounds = true
+                
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 item.contentInsets.leading = 16
                 item.contentInsets.trailing = 16
@@ -126,6 +110,7 @@ class FoodController: UICollectionViewController{
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(250)), subitems: [item])
                     
                 let section = NSCollectionLayoutSection(group: group)
+                section.boundarySupplementaryItems = [pagingheader]
                 return section
             }
         }
@@ -133,15 +118,12 @@ class FoodController: UICollectionViewController{
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-        //header.backgroundColor = .blue
-        return header
+      
+            return header
     }
     
-    let headerId = "headerId"
-    static let categoryHeaderId = "categoryHeaderId"
-    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        5
+        4
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -175,13 +157,7 @@ class FoodController: UICollectionViewController{
             
             cellC.data=self.bestData[indexPath.row]
             return cellC
-        } else if indexPath.section == 3 {
-            let cellE = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! StoreCategoryCell
-            
-            cellE.data=self.categoryItem[indexPath.row]
-            return cellE
-            
-        } else if indexPath.section == 4 {
+        } else {
             let cellD = collectionView.dequeueReusableCell(withReuseIdentifier: "storeCell", for: indexPath) as! StoreCell
             
             cellD.data=self.storeData[indexPath.row]
@@ -190,14 +166,15 @@ class FoodController: UICollectionViewController{
             cellD.layer.shadowRadius = 5
             return cellD
         }
-        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .red
-        
-        
-        return cell
+//        let cell=collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+//        cell.backgroundColor = .red
+//
+//
+//        return cell
     }
     
     private let cellId="cellId"
+    let headerId = "headerId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -210,33 +187,14 @@ class FoodController: UICollectionViewController{
         collectionView.register(BannerCell.self, forCellWithReuseIdentifier: "bannerCell")
         collectionView.register(MenuCell.self,forCellWithReuseIdentifier:"menuCell")
         collectionView.register(BestCell.self,forCellWithReuseIdentifier:"bestCell")
-        collectionView.register(StoreCategoryCell.self,forCellWithReuseIdentifier:"categoryCell")
         collectionView.register(StoreCell.self,forCellWithReuseIdentifier:"storeCell")
-        collectionView.register(Header.self,forSupplementaryViewOfKind:FoodController.categoryHeaderId,withReuseIdentifier:headerId)
+        collectionView.register(BestHeader.self,forSupplementaryViewOfKind:BestHeader.bestHeaderId,withReuseIdentifier:headerId)
+        collectionView.register(HeaderTabBar.self, forSupplementaryViewOfKind:HeaderTabBar.tabBarHeaderId,withReuseIdentifier:headerId)
         
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder: ) has not been implemented")
-    }
-}
-
-class Header : UICollectionReusableView {
-    let label = UILabel()
-    override init(frame:CGRect){
-        super.init(frame: frame)
-        label.text="SNS에서 뜨는 맛집!"
-        
-        addSubview(label)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        label.frame = bounds
     }
 }
 
