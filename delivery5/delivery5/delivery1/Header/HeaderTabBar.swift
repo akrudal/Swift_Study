@@ -44,12 +44,17 @@ class HeaderTabBar: UICollectionReusableView {
         super.init(frame: frame)
         addSubview(collectionView)
         
+//        collectionView.backgroundColor = .blue
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        collectionView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        collectionView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        collectionView.register(StoreHeaderCell.self, forCellWithReuseIdentifier: HeaderTabBar.tabBarHeaderId)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.register(StoreHeaderCell.self, forCellWithReuseIdentifier: StoreHeaderCell.storeHeaderId)
     }
     
     required init?(coder: NSCoder) {
@@ -67,11 +72,13 @@ extension HeaderTabBar: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeaderTabBar.tabBarHeaderId, for: indexPath) as? StoreHeaderCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:StoreHeaderCell.storeHeaderId, for: indexPath) as? StoreHeaderCell else {
             return UICollectionViewCell()
         }
         
-        cell.data=self.categoryItem[indexPath.row]
+        cell.backgroundColor = .black
+        
+        cell.data=categoryItem[indexPath.row]
         return cell
     }
     

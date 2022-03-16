@@ -12,6 +12,9 @@ struct CategoryData {
 }
 
 class StoreHeaderCell: UICollectionViewCell {
+    
+    static let storeHeaderId="storeHeaderId"
+    
     var data:CategoryData?{
         didSet{
             guard let data = data else { return }
@@ -19,12 +22,14 @@ class StoreHeaderCell: UICollectionViewCell {
         }
     }
     
+    
     let categoryL:UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 14)
-
+        label.text = "TEST"
+        label.sizeToFit()
         return label
     }()
     
@@ -47,6 +52,8 @@ class StoreHeaderCell: UICollectionViewCell {
         super.init(frame:frame)
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 20.0
+        
+        contentView.backgroundColor = .black
         contentView.addSubview(categoryL)
     }
     
@@ -71,9 +78,10 @@ class StoreHeaderCell: UICollectionViewCell {
     
     func makeConstraints() {
       categoryL.sizeToFit()
-    }
-    func configure(with text: String) {
-      categoryL.text = text
+        categoryL.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        categoryL.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        categoryL.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        categoryL.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
 }
 
