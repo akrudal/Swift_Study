@@ -27,17 +27,18 @@ class MainHeaderCell: UICollectionViewCell {
       }
     func setData(with text: String) {
         tabL.text = text
-        print(tabL.text)
+        tabL.backgroundColor = .blue
     }
-    override init(frame:CGRect){
+    override init(frame:CGRect) {
         super.init(frame: frame)
-        print("왜안대애앵")
-        contentView.addSubview(tabL)
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
+        tabL.sizeToFit()
+        tabL.layer.masksToBounds = true
+        tabL.layer.cornerRadius = tabL.frame.size.height / 2
     }
 }

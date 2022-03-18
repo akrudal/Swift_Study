@@ -8,15 +8,12 @@
 import UIKit
 
 class MainView: UIViewController {
-
+    let headerId = "headerId"
     @IBOutlet var mainCV: UICollectionView! {
         didSet {
             mainCV.collectionViewLayout = createLayout()
         }
     }
-    
-    let headerId = "headerId"
-    
     func createLayout() -> UICollectionViewCompositionalLayout {
         let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: size)
@@ -24,14 +21,14 @@ class MainView: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .paging
         section.boundarySupplementaryItems = [
-                            .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: MainHeader.mainHeaderId, alignment: .topLeading)
-                        ]
+            .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .topLeading)
+        ]
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainCV.register(MainHeader.self, forSupplementaryViewOfKind: MainHeader.mainHeaderId, withReuseIdentifier: MainHeader.mainHeaderId)
+//        mainCV.register(MainHeader.self, forSupplementaryViewOfKind: MainHeader.mainHeaderId, withReuseIdentifier: MainHeader.mainHeaderId)
     }
 }
 
@@ -60,7 +57,8 @@ extension MainView: UICollectionViewDelegate, UICollectionViewDataSource {
         return 8
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MainHeader.mainHeaderId, for: indexPath) as? MainHeader else {
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                               withReuseIdentifier: MainHeader.mainHeaderId, for: indexPath) as? MainHeader else {
             return UICollectionReusableView()
         }
         return headerView
