@@ -28,19 +28,11 @@ class MainView: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mainCV.register(MainHeader.self, forSupplementaryViewOfKind: MainHeader.mainHeaderId, withReuseIdentifier: MainHeader.mainHeaderId)
     }
 }
 
 extension MainView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(
-//          withReuseIdentifier: MainCell.Id, for: indexPath) as? MainCell
-//          else {
-//            return UICollectionViewCell()
-//        }
-//
-//        return MainCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = .systemPink
         if indexPath.item % 2 == 0 {
