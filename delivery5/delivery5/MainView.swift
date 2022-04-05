@@ -36,7 +36,10 @@ class MainView: UICollectionViewFlowLayout{
 
 extension MainView : UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodController.delivery1Id , for: indexPath)
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodController.delivery1Id , for: indexPath)
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
