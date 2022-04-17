@@ -219,12 +219,12 @@ struct Container: UIViewControllerRepresentable {
     typealias UIVIewControllerType = UIViewController
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View{
-//        Container().edgesIgnoringSafeArea(.all)
-//    }
-//
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View{
+        Container().edgesIgnoringSafeArea(.all)
+    }
+
+}
 
 struct ContentView: View{
     var body: some View {

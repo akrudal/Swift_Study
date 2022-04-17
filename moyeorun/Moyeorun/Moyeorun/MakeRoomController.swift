@@ -13,38 +13,76 @@ class MakeRoomController: UIViewController {
     @IBOutlet var startTimeButton: UIButton!
     @IBOutlet var distanceButton: UIButton!
     @IBOutlet var limitTimeButton: UIButton!
+    @IBOutlet var paceButton: UIButton!
     @IBOutlet var setNameLength: UILabel!
     @IBOutlet var setDescriptionLength: UILabel!
-    var namePlaceHolder = ""
-    var descriptionPlaceHolder = ""
+    @IBOutlet var navigationBar: UINavigationBar!
 
+    var namePlaceHolder = """
+    방 이름을 입력해주세요.
+    (ex. 자유롭게 5km 뛰어요)
+    """
+    var descriptionPlaceHolder = """
+    방을 설명할 정보를 입력해주세요.
+    (ex. 30분 안에 5km 뛰기)
+    """
+
+    let publicLabel: UILabel = {
+        let label = UILabel()
+        label.text = "공개"
+        label.textColor = .lightGray
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextView.delegate = self
-        namePlaceHolder = nameTextView.text
         descriptionTextView.delegate = self
-        descriptionPlaceHolder = descriptionTextView.text
-        setColorButton(temp: [peopleButton, startTimeButton, distanceButton, limitTimeButton])
+        setNavigationBarStyle()
+        setColorButton(temp: [
+            peopleButton,
+            startTimeButton,
+            distanceButton,
+            limitTimeButton,
+            paceButton])
         setBorder(temp: [
             nameTextView,
             descriptionTextView,
             peopleButton,
             startTimeButton,
             distanceButton,
-            limitTimeButton
+            limitTimeButton,
+            paceButton
         ])
     }
+
     func setColorButton(temp: [UIButton]) {
         for value in temp {
             value.setTitleColor(.lightGray, for: .normal)
         }
     }
+
     func setBorder(temp: [AnyObject]) {
         for value in temp {
             value.layer.borderWidth = 1.0
             value.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.7).cgColor
         }
     }
+
+    func setNavigationBarStyle() {
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
+        navigationBar.layoutIfNeeded()
+    }
+    
+    @IBAction func controlSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            publicLabel.text = "공개"
+        } else {
+            publicLabel.text = "비공개"
+        }
+    }
+    
     @IBAction func showPopup(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "MakeRoom", bundle: nil)
         guard let popupVC = storyBoard.instantiateViewController(
@@ -92,14 +130,13 @@ extension MakeRoomController: SendDataDelegate {
 }
 
 extension MakeRoomController: UITextViewDelegate {
-    // focus 경우
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
+        if (textView.text == namePlaceHolder || textView.text == descriptionPlaceHolder) {
             textView.text = nil
             textView.textColor = .black
         }
     }
-    // focus를 잃는 경우
+ 
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             if textView == nameTextView {
@@ -116,10 +153,11 @@ extension MakeRoomController: UITextViewDelegate {
         let changedText = currentText.replacingCharacters(in: stringRange, with: text)
         if textView == nameTextView {
             setNameLength.text = String(textView.text.count)
+            return changedText.count <= 20
         } else {
             setDescriptionLength.text = String(textView.text.count)
+            return changedText.count <= 40
         }
-        return changedText.count <= 40
     }
 }
 
