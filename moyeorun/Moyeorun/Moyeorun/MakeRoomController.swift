@@ -17,7 +17,9 @@ class MakeRoomController: UIViewController {
     @IBOutlet var setNameLength: UILabel!
     @IBOutlet var setDescriptionLength: UILabel!
     @IBOutlet var navigationBar: UINavigationBar!
-
+    @IBOutlet var publicSwitch: UISwitch!
+    @IBOutlet var publicLabel: UILabel!
+    
     var namePlaceHolder = """
     방 이름을 입력해주세요.
     (ex. 자유롭게 5km 뛰어요)
@@ -26,40 +28,19 @@ class MakeRoomController: UIViewController {
     방을 설명할 정보를 입력해주세요.
     (ex. 30분 안에 5km 뛰기)
     """
-
-    let publicLabel: UILabel = {
-        let label = UILabel()
-        label.text = "공개"
-        label.textColor = .lightGray
-        return label
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextView.delegate = self
         descriptionTextView.delegate = self
         setNavigationBarStyle()
-        setColorButton(temp: [
-            peopleButton,
-            startTimeButton,
-            distanceButton,
-            limitTimeButton,
-            paceButton])
-        setBorder(temp: [
-            nameTextView,
-            descriptionTextView,
-            peopleButton,
-            startTimeButton,
-            distanceButton,
-            limitTimeButton,
-            paceButton
-        ])
+        setBorder(temp: [nameTextView,descriptionTextView])
+        setSwitchStyle()
     }
-
-    func setColorButton(temp: [UIButton]) {
-        for value in temp {
-            value.setTitleColor(.lightGray, for: .normal)
-        }
+    
+    func setSwitchStyle() {
+        publicSwitch.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        publicSwitch.translatesAutoresizingMaskIntoConstraints = false
     }
 
     func setBorder(temp: [AnyObject]) {

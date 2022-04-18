@@ -20,6 +20,10 @@
 		3AD69E6A27E8F3F40015F434 /* MakeRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD69E6927E8F3F40015F434 /* MakeRoomController.swift */; };
 		3AD69E6F27E8F3F50015F434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AD69E6E27E8F3F50015F434 /* Assets.xcassets */; };
 		3AD69E7227E8F3F50015F434 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AD69E7027E8F3F50015F434 /* LaunchScreen.storyboard */; };
+		3AE4102D280D5016006C5CE7 /* MakeRoomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4102C280D5016006C5CE7 /* MakeRoomButton.swift */; };
+		3AE4102F280D5558006C5CE7 /* SelectPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE4102E280D5558006C5CE7 /* SelectPhoto.storyboard */; };
+		3AE41031280D5743006C5CE7 /* SelectPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE41030280D5743006C5CE7 /* SelectPhotoController.swift */; };
+		3AE41033280D5867006C5CE7 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE41032280D5867006C5CE7 /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		3AD69E6E27E8F3F50015F434 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AD69E7127E8F3F50015F434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AD69E7327E8F3F50015F434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE4102C280D5016006C5CE7 /* MakeRoomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomButton.swift; sourceTree = "<group>"; };
+		3AE4102E280D5558006C5CE7 /* SelectPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectPhoto.storyboard; sourceTree = "<group>"; };
+		3AE41030280D5743006C5CE7 /* SelectPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoController.swift; sourceTree = "<group>"; };
+		3AE41032280D5867006C5CE7 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,10 @@
 				3A5AFB1E27F2DEE200732752 /* TipView.swift */,
 				3A132D3527F7342C008FA7BB /* MakeRoomPopUp.storyboard */,
 				3A64A324280C03720047C158 /* ToggleSwitch.swift */,
+				3AE4102C280D5016006C5CE7 /* MakeRoomButton.swift */,
+				3AE4102E280D5558006C5CE7 /* SelectPhoto.storyboard */,
+				3AE41030280D5743006C5CE7 /* SelectPhotoController.swift */,
+				3AE41032280D5867006C5CE7 /* PhotoCell.swift */,
 			);
 			path = Moyeorun;
 			sourceTree = "<group>";
@@ -151,6 +163,7 @@
 				3A3EA7B527F47D9300F8F217 /* MakeRoom.storyboard in Resources */,
 				3AD69E7227E8F3F50015F434 /* LaunchScreen.storyboard in Resources */,
 				3AD69E6F27E8F3F50015F434 /* Assets.xcassets in Resources */,
+				3AE4102F280D5558006C5CE7 /* SelectPhoto.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +178,12 @@
 				3A64A325280C03720047C158 /* ToggleSwitch.swift in Sources */,
 				3AD69E6627E8F3F40015F434 /* AppDelegate.swift in Sources */,
 				3AD69E6827E8F3F40015F434 /* SceneDelegate.swift in Sources */,
+				3AE41031280D5743006C5CE7 /* SelectPhotoController.swift in Sources */,
 				3A5AFB1D27F2D7D500732752 /* MoyeoRunRoomController.swift in Sources */,
 				3A8937E627EDDCA000559FBF /* RoomViewController.swift in Sources */,
+				3AE4102D280D5016006C5CE7 /* MakeRoomButton.swift in Sources */,
 				3A5AFB1F27F2DEE300732752 /* TipView.swift in Sources */,
+				3AE41033280D5867006C5CE7 /* PhotoCell.swift in Sources */,
 				3A9A10AD27E9E50000021123 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,7 +337,7 @@
 				INFOPLIST_FILE = Moyeorun/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = MakeRoom;
+				INFOPLIST_KEY_UIMainStoryboardFile = SelectPhoto;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -349,7 +365,7 @@
 				INFOPLIST_FILE = Moyeorun/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = MakeRoom;
+				INFOPLIST_KEY_UIMainStoryboardFile = SelectPhoto;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJk-nK-xLH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749" y="63"/>
+            <point key="canvasLocation" x="2734" y="77"/>
         </scene>
         <!--Make Room Controller-->
         <scene sceneID="tFj-zj-0pF">
@@ -91,12 +91,15 @@
                                                 </constraints>
                                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <items>
-                                                    <navigationItem title="Title" id="MFu-8v-efx">
+                                                    <navigationItem id="MFu-8v-efx">
                                                         <barButtonItem key="rightBarButtonItem" style="plain" id="IHl-vC-NHT">
                                                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="g9X-pd-Nlk">
                                                                 <rect key="frame" x="323" y="6.6666666666666679" width="51" height="31.000000000000004"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="onTintColor" systemColor="systemBlueColor"/>
+                                                                <connections>
+                                                                    <action selector="controlSwitch:" destination="BTM-fJ-JdP" eventType="valueChanged" id="He1-6f-Lh7"/>
+                                                                </connections>
                                                             </switch>
                                                         </barButtonItem>
                                                     </navigationItem>
@@ -181,7 +184,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvt-4D-1PZ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvt-4D-1PZ" customClass="MakeRoomButton" customModule="Moyeorun" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="543" width="340" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="8l9-Ul-8pc"/>
@@ -194,7 +197,7 @@
                                                     <action selector="showPopup:" destination="BTM-fJ-JdP" eventType="touchUpInside" id="Hqv-ft-2a5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QE-5N-9pU">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QE-5N-9pU" customClass="MakeRoomButton" customModule="Moyeorun" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="775" width="340" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="qjy-Wz-sUv"/>
@@ -207,7 +210,7 @@
                                                     <action selector="showPopup:" destination="BTM-fJ-JdP" eventType="touchUpInside" id="GRz-Il-jfn"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCu-sk-7Qq">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCu-sk-7Qq" customClass="MakeRoomButton" customModule="Moyeorun" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="659" width="340" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="WLq-ro-dSh"/>
@@ -238,7 +241,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6o-Ut-001">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6o-Ut-001" customClass="MakeRoomButton" customModule="Moyeorun" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="1007" width="340" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Wl2-q9-SQh"/>
@@ -259,7 +262,7 @@
                                                 </constraints>
                                                 <buttonConfiguration key="configuration" style="plain" image="gallery"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J93-Z7-aaK">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J93-Z7-aaK" customClass="MakeRoomButton" customModule="Moyeorun" customModuleProvider="target">
                                                 <rect key="frame" x="25" y="891" width="340" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="l4g-OX-hlo"/>
@@ -303,6 +306,13 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="공개" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jx-1N-7gD">
+                                                <rect key="frame" x="292" y="15" width="21" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -411,6 +421,8 @@
                         <outlet property="navigationBar" destination="0t8-RH-f1S" id="ujc-OE-rGe"/>
                         <outlet property="paceButton" destination="J93-Z7-aaK" id="Pk2-LV-Bmq"/>
                         <outlet property="peopleButton" destination="P6o-Ut-001" id="6bo-XR-z3t"/>
+                        <outlet property="publicLabel" destination="7jx-1N-7gD" id="jB5-hm-RKE"/>
+                        <outlet property="publicSwitch" destination="g9X-pd-Nlk" id="or5-hc-n7Y"/>
                         <outlet property="setDescriptionLength" destination="9R4-Y8-esd" id="j8c-Lw-8A5"/>
                         <outlet property="setNameLength" destination="P8W-U1-ifN" id="yVE-ua-eTh"/>
                         <outlet property="startTimeButton" destination="gvt-4D-1PZ" id="LPM-6h-1pF"/>
