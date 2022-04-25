@@ -28,11 +28,11 @@ class MakeRoomController: UIViewController {
     방을 설명할 정보를 입력해주세요.
     (ex. 30분 안에 5km 뛰기)
     """
-    var myDistance: Int!
-    var myLimitTime: Int!
-    var myPace: Int!
-    var myPacePoint: Int!
-    
+//    var myDistance: Int!
+//    var myLimitTime: Int!
+//    var myPace: Int!
+//    var myPacePoint: Int!
+//
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextView.delegate = self
@@ -86,17 +86,17 @@ class MakeRoomController: UIViewController {
         present(popupVC, animated: true, completion: nil)
     }
     
-    func setMyPace() {
-        myPace = myLimitTime/myDistance
-        myPacePoint = myLimitTime % myDistance
-        if myPace != nil {
-            self.paceButton.setTitle("\(myPace)'\(myPacePoint)\"", for: .normal)
-        }
-    }
-    
-    func setMyLimitTime() {
-        
-    }
+//    func setMyPace() {
+//        myPace = myLimitTime/myDistance
+//        myPacePoint = myLimitTime % myDistance
+//        if myPace != nil {
+//            self.paceButton.setTitle("\(myPace)'\(myPacePoint)\"", for: .normal)
+//        }
+//    }
+//
+//    func setMyLimitTime() {
+//
+//    }
 }
 
 
@@ -105,20 +105,20 @@ extension MakeRoomController: SendDataDelegate {
         self.startTimeButton.setTitle(startTime, for: .normal)
     }
     func sendDistance(distance: Int) {
-        myDistance = distance
-        if myLimitTime != nil {
-            setPace()
-        }
+//        myDistance = distance
+//        if myLimitTime != nil {
+//            setPace()
+//        }
         self.distanceButton.setTitle("\(distance)KM", for: .normal)
     }
     func sendPeopleNum(peopleNum: Int) {
         self.peopleButton.setTitle("\(peopleNum)명", for: .normal)
     }
     func sendLimitTime(limitTime: Int) {
-        myLimitTime = limitTime
-        if myDistance != nil {
-            setPace()
-        }
+//        myLimitTime = limitTime
+//        if myDistance != nil {
+//            setPace()
+//        }
         if limitTime == 1 {
             let temp = "\(limitTime) * 10)분"
             self.limitTimeButton.setTitle(temp, for: .normal)
