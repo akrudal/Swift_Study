@@ -96,7 +96,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5s-YW-14u">
-                                <rect key="frame" x="42" y="746" width="330" height="70"/>
+                                <rect key="frame" x="42" y="742" width="330" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ0-H5-XJ8">
                                         <rect key="frame" x="22" y="12" width="66" height="34"/>
@@ -187,30 +187,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdv-mK-kNJ">
                                 <rect key="frame" x="0.0" y="836" width="414" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFJ-Me-PLu">
-                                        <rect key="frame" x="25" y="10" width="42" height="20"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qz3-9j-c9k">
-                                        <rect key="frame" x="374" y="15" width="15" height="10"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="15" id="pnx-1Z-vO3"/>
-                                            <constraint firstAttribute="height" constant="10" id="zGB-Iv-KfM"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdU-r5-Me9">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chevron.compact.up" catalog="system"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.up" catalog="system" imagePlacement="trailing" title="실시간" titleAlignment="leading">
+                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="20" bottom="0.0" trailing="20"/>
+                                        </buttonConfiguration>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="mFJ-Me-PLu" firstAttribute="leading" secondItem="Mdv-mK-kNJ" secondAttribute="leading" constant="25" id="3BA-2A-8XL"/>
-                                    <constraint firstItem="Qz3-9j-c9k" firstAttribute="top" secondItem="Mdv-mK-kNJ" secondAttribute="top" constant="15" id="8TU-69-Omn"/>
-                                    <constraint firstItem="mFJ-Me-PLu" firstAttribute="top" secondItem="Mdv-mK-kNJ" secondAttribute="top" constant="10" id="PhE-C6-vva"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qz3-9j-c9k" secondAttribute="trailing" constant="25" id="joc-ga-Jdd"/>
+                                    <constraint firstItem="sdU-r5-Me9" firstAttribute="leading" secondItem="Mdv-mK-kNJ" secondAttribute="leading" id="6kN-vo-LDG"/>
+                                    <constraint firstItem="sdU-r5-Me9" firstAttribute="top" secondItem="Mdv-mK-kNJ" secondAttribute="top" id="7g1-p1-YgB"/>
+                                    <constraint firstAttribute="trailing" secondItem="sdU-r5-Me9" secondAttribute="trailing" id="mgl-9y-n3W"/>
                                     <constraint firstAttribute="height" constant="60" id="wfe-y6-4OM"/>
+                                    <constraint firstAttribute="bottom" secondItem="sdU-r5-Me9" secondAttribute="bottom" id="xga-AB-Edi"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1m-MX-1d8">
@@ -237,15 +230,16 @@
                         <constraints>
                             <constraint firstItem="4xl-lc-jx8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1bx-dC-iKW"/>
                             <constraint firstItem="4xl-lc-jx8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5Hh-PR-Cga"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="y5s-YW-14u" secondAttribute="bottom" constant="50" id="5qw-vy-JWG"/>
                             <constraint firstItem="Xlb-gv-cbB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="6y3-1y-xGe"/>
                             <constraint firstItem="eHD-JW-lz4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="65" id="A9w-Jz-Pyd"/>
                             <constraint firstItem="z1m-MX-1d8" firstAttribute="top" secondItem="Xlb-gv-cbB" secondAttribute="bottom" constant="15" id="AQu-Qf-dtA"/>
                             <constraint firstItem="y5s-YW-14u" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Csw-1l-iLa"/>
-                            <constraint firstAttribute="bottom" secondItem="Mdv-mK-kNJ" secondAttribute="bottom" id="IzM-Wa-y45"/>
                             <constraint firstItem="z1m-MX-1d8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="LS7-4s-bV0"/>
-                            <constraint firstItem="Mdv-mK-kNJ" firstAttribute="top" secondItem="y5s-YW-14u" secondAttribute="bottom" constant="20" id="PuR-Yc-MzD"/>
                             <constraint firstItem="teh-hj-uXG" firstAttribute="top" secondItem="eHD-JW-lz4" secondAttribute="bottom" constant="8" id="QYO-YQ-rFz"/>
                             <constraint firstItem="Xlb-gv-cbB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="65" id="R0x-i4-iJr"/>
+                            <constraint firstAttribute="bottom" secondItem="Mdv-mK-kNJ" secondAttribute="bottom" id="RLR-W2-N1f"/>
+                            <constraint firstItem="Mdv-mK-kNJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="T1T-rV-UEH"/>
                             <constraint firstAttribute="bottom" secondItem="4xl-lc-jx8" secondAttribute="bottom" id="Ue9-4D-2yJ"/>
                             <constraint firstItem="Mdv-mK-kNJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="V0E-aq-D8K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="teh-hj-uXG" secondAttribute="trailing" constant="25" id="Y7g-hh-ZaI"/>
@@ -259,6 +253,10 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="button1" destination="eHD-JW-lz4" id="gzy-2j-ckL"/>
+                        <outlet property="button2" destination="teh-hj-uXG" id="rRB-cr-WsK"/>
+                        <outlet property="heightConstraint" destination="wfe-y6-4OM" id="S40-rs-sKh"/>
+                        <outlet property="liveView" destination="Mdv-mK-kNJ" id="Uhe-TW-l3e"/>
                         <outlet property="mapView" destination="4xl-lc-jx8" id="9nY-oa-ytv"/>
                         <outlet property="myImage" destination="Xlb-gv-cbB" id="PkK-ts-Fym"/>
                         <outlet property="remainTimeLabel" destination="HHJ-Ao-g2N" id="ACc-n1-Zj9"/>
@@ -275,7 +273,7 @@
         <image name="Image (2)" width="13" height="16"/>
         <image name="Image-2" width="28" height="28"/>
         <image name="Lisa" width="550" height="687"/>
-        <image name="chevron.compact.up" catalog="system" width="128" height="43"/>
+        <image name="chevron.up" catalog="system" width="128" height="72"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
