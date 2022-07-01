@@ -12,8 +12,6 @@
 		3A5AFB1B27F2CDC500732752 /* MoyeoRunRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5AFB1A27F2CDC500732752 /* MoyeoRunRoom.storyboard */; };
 		3A5AFB1D27F2D7D500732752 /* MoyeoRunRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB1C27F2D7D500732752 /* MoyeoRunRoomController.swift */; };
 		3A5AFB1F27F2DEE300732752 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5AFB1E27F2DEE200732752 /* TipView.swift */; };
-		3A64A325280C03720047C158 /* ToggleSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A64A324280C03720047C158 /* ToggleSwitch.swift */; };
-		3A8937E627EDDCA000559FBF /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8937E527EDDCA000559FBF /* RoomViewController.swift */; };
 		3A9A10AD27E9E50000021123 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A10AC27E9E50000021123 /* PopupViewController.swift */; };
 		3AD69E6627E8F3F40015F434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD69E6527E8F3F40015F434 /* AppDelegate.swift */; };
 		3AD69E6827E8F3F40015F434 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD69E6727E8F3F40015F434 /* SceneDelegate.swift */; };
@@ -32,8 +30,6 @@
 		3A5AFB1A27F2CDC500732752 /* MoyeoRunRoom.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoyeoRunRoom.storyboard; sourceTree = "<group>"; };
 		3A5AFB1C27F2D7D500732752 /* MoyeoRunRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyeoRunRoomController.swift; sourceTree = "<group>"; };
 		3A5AFB1E27F2DEE200732752 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
-		3A64A324280C03720047C158 /* ToggleSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleSwitch.swift; sourceTree = "<group>"; };
-		3A8937E527EDDCA000559FBF /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		3A9A10AC27E9E50000021123 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		3AD69E6227E8F3F40015F434 /* Moyeorun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moyeorun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD69E6527E8F3F40015F434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +78,6 @@
 				3AD69E6727E8F3F40015F434 /* SceneDelegate.swift */,
 				3AD69E6927E8F3F40015F434 /* MakeRoomController.swift */,
 				3A9A10AC27E9E50000021123 /* PopupViewController.swift */,
-				3A8937E527EDDCA000559FBF /* RoomViewController.swift */,
 				3A3EA7B327F47D9300F8F217 /* MakeRoom.storyboard */,
 				3AD69E6E27E8F3F50015F434 /* Assets.xcassets */,
 				3AD69E7027E8F3F50015F434 /* LaunchScreen.storyboard */,
@@ -91,7 +86,6 @@
 				3A5AFB1C27F2D7D500732752 /* MoyeoRunRoomController.swift */,
 				3A5AFB1E27F2DEE200732752 /* TipView.swift */,
 				3A132D3527F7342C008FA7BB /* MakeRoomPopUp.storyboard */,
-				3A64A324280C03720047C158 /* ToggleSwitch.swift */,
 				3AE4102C280D5016006C5CE7 /* MakeRoomButton.swift */,
 				3AE4102E280D5558006C5CE7 /* SelectPhoto.storyboard */,
 				3AE41030280D5743006C5CE7 /* SelectPhotoController.swift */,
@@ -175,12 +169,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AD69E6A27E8F3F40015F434 /* MakeRoomController.swift in Sources */,
-				3A64A325280C03720047C158 /* ToggleSwitch.swift in Sources */,
 				3AD69E6627E8F3F40015F434 /* AppDelegate.swift in Sources */,
 				3AD69E6827E8F3F40015F434 /* SceneDelegate.swift in Sources */,
 				3AE41031280D5743006C5CE7 /* SelectPhotoController.swift in Sources */,
 				3A5AFB1D27F2D7D500732752 /* MoyeoRunRoomController.swift in Sources */,
-				3A8937E627EDDCA000559FBF /* RoomViewController.swift in Sources */,
 				3AE4102D280D5016006C5CE7 /* MakeRoomButton.swift in Sources */,
 				3A5AFB1F27F2DEE300732752 /* TipView.swift in Sources */,
 				3AE41033280D5867006C5CE7 /* PhotoCell.swift in Sources */,

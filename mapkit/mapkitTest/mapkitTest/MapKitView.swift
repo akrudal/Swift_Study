@@ -100,6 +100,13 @@ extension MapKitView: CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         let latitude = location.coordinate.latitude
         let longtitude = location.coordinate.longitude
+        
+        let range = 10.0
+        let centerRange = CLLocationCoordinate2DMake(latitude, longtitude)
+        let myRange = CLCircularRegion(center: CLLocationCoordinate2D(latitude: centerRange.latitude, longitude: centerRange.longitude), radius: range, identifier: "myRange")
+        locationManager.startUpdatingLocation()
+        locationManager.startMonitoring(for: myRange)
+//        let circleRange = MKCircle(center: centerRange, radius: range)
 
         if let previousCoordinate = self.previousCoordinate {
             var points: [CLLocationCoordinate2D] = []
@@ -127,16 +134,22 @@ extension MapKitView: CLLocationManagerDelegate {
 
 extension MapKitView: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        guard let polyLine = overlay as? MKPolyline else {
-            debugPrint("can't draw polyline")
-            return MKOverlayRenderer()
-        }
-        let renderer = MKPolylineRenderer(polyline: polyLine)
-        renderer.strokeColor = myColor
-        renderer.fillColor = myColor
-        renderer.lineWidth = 5.0
-        renderer.alpha = 1.0
-
-        return renderer
+        if let polyline = overlay as? MKPolyline {
+             let renderer = MKPolylineRenderer(polyline: polyline)
+            renderer.strokeColor = myColor
+            renderer.fillColor = myColor
+            renderer.lineWidth = 1.0
+            renderer.alpha = 1.0
+            return renderer
+         }
+         else if let circle = overlay as? MKCircle {
+             let renderer = MKCircleRenderer(circle: circle)
+             renderer.strokeColor = myColor
+             renderer.fillColor = myColor.withAlphaComponent(0.3)
+             renderer.lineWidth = 1.0
+             return renderer
+         } else {
+             fatalError()
+         }
     }
 }

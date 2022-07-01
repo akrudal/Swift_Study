@@ -22,9 +22,9 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>해줭</string>
+	<string>사용자의 위치를 받아오려고 합니다</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>해줭</string>
+	<string>사용자의 위치를 받아오려고 합니다.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>해줭</string>
 </dict>
