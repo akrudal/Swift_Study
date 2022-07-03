@@ -10,6 +10,6 @@ import Moya
 
 extension TargetType {
     var baseURL: URL {
-        return Configuration.baseURL
+        return URL(string:"http://15.164.169.48:4000")!
     }
 }

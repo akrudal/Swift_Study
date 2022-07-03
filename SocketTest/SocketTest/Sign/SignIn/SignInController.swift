@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 class SignInController: UIViewController {
 
@@ -14,19 +15,20 @@ class SignInController: UIViewController {
     @IBOutlet var pwdTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     
-    var idText: String?
-    var pwdText: String?
-    var emailText: String?
+    var idText: String = ""
+    var pwdText: String = ""
+    var emailText: String = ""
     
     @IBAction func inputText(_ sender: UITextField) {
         if sender == idTextField {
-            idText = idTextField.text
+            idText = idTextField.text!
         } else if sender == pwdTextField {
-            pwdText = pwdTextField.text
+            pwdText = pwdTextField.text!
         } else {
-            emailText = emailTextField.text
+            emailText = emailTextField.text!
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,10 +37,16 @@ class SignInController: UIViewController {
     
 
     @IBAction func clickComplete(_ sender: Any) {
-        let repository = SignInRepository()
-        if let id = idText, let pwd = pwdText, let email = emailText {
-            let request: SignInRequest = SignInRequest(userId: id, password: pwd, email: email)
-            repository.inquirySignIn(request: request, completion: <#(Result<SignInResponse, Error>) -> Void#>)
+        let request: SignInRequest = SignInRequest(userId: idText, password: pwdText, email: emailText)
+        let repository: SignInRepository = SignInRepository()
+        
+        repository.inquirySignIn(request: request) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case . failure(let error):
+                print(error)
+            }
         }
     }
     /*

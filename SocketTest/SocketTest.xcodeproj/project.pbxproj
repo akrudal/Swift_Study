@@ -14,10 +14,8 @@
 		3A54AB75286F22DD0096F76E /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A54AB74286F22DD0096F76E /* SignUp.storyboard */; };
 		3A54AB78286F25610096F76E /* SignInDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AB77286F25610096F76E /* SignInDTO.swift */; };
 		3A54AB7B286F26B00096F76E /* SignInDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AB7A286F26B00096F76E /* SignInDataSource.swift */; };
-		3A54AB7F286F2A400096F76E /* MoyaProvider+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AB7E286F2A400096F76E /* MoyaProvider+.swift */; };
 		3A54AB81286F2A6F0096F76E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AB80286F2A6F0096F76E /* Response.swift */; };
 		3A54AB83286F2A8D0096F76E /* TargetType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AB82286F2A8D0096F76E /* TargetType+.swift */; };
-		3A54AB85286F2ACE0096F76E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AB84286F2ACE0096F76E /* Configuration.swift */; };
 		3A54AB88286F2B6C0096F76E /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AB87286F2B6C0096F76E /* SignInRepository.swift */; };
 		3A54AB8A286F318F0096F76E /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54AB89286F318F0096F76E /* SignInController.swift */; };
 		3A6559F4283522F100FA2485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6559F3283522F100FA2485 /* AppDelegate.swift */; };
@@ -26,6 +24,7 @@
 		3A6559FB283522F100FA2485 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6559F9283522F100FA2485 /* Main.storyboard */; };
 		3A6559FD283522F400FA2485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6559FC283522F400FA2485 /* Assets.xcassets */; };
 		3A655A00283522F400FA2485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6559FE283522F400FA2485 /* LaunchScreen.storyboard */; };
+		3A7E854F2871C7AF00B960FC /* MoyaProvider+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E854E2871C7AF00B960FC /* MoyaProvider+.swift */; };
 		3AAF61342837855B00C7B580 /* ChatDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF61332837855B00C7B580 /* ChatDTO.swift */; };
 		3AAF61362837860400C7B580 /* ChatRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF61352837860400C7B580 /* ChatRemoteDataSource.swift */; };
 		3AAF613828378AC600C7B580 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF613728378AC600C7B580 /* RoomDTO.swift */; };
@@ -41,10 +40,8 @@
 		3A54AB74286F22DD0096F76E /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		3A54AB77286F25610096F76E /* SignInDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDTO.swift; sourceTree = "<group>"; };
 		3A54AB7A286F26B00096F76E /* SignInDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDataSource.swift; sourceTree = "<group>"; };
-		3A54AB7E286F2A400096F76E /* MoyaProvider+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+.swift"; sourceTree = "<group>"; };
 		3A54AB80286F2A6F0096F76E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		3A54AB82286F2A8D0096F76E /* TargetType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+.swift"; sourceTree = "<group>"; };
-		3A54AB84286F2ACE0096F76E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		3A54AB87286F2B6C0096F76E /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
 		3A54AB89286F318F0096F76E /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		3A6559F0283522F100FA2485 /* SocketTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +52,7 @@
 		3A6559FC283522F400FA2485 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A6559FF283522F400FA2485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A655A01283522F400FA2485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7E854E2871C7AF00B960FC /* MoyaProvider+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+.swift"; sourceTree = "<group>"; };
 		3AAF61332837855B00C7B580 /* ChatDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDTO.swift; sourceTree = "<group>"; };
 		3AAF61352837860400C7B580 /* ChatRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRemoteDataSource.swift; sourceTree = "<group>"; };
 		3AAF613728378AC600C7B580 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 		3A54AB7C286F2A260096F76E /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				3A54AB84286F2ACE0096F76E /* Configuration.swift */,
 				3A54AB7D286F2A300096F76E /* Network */,
 			);
 			path = Base;
@@ -141,9 +138,9 @@
 		3A54AB7D286F2A300096F76E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				3A54AB7E286F2A400096F76E /* MoyaProvider+.swift */,
 				3A54AB80286F2A6F0096F76E /* Response.swift */,
 				3A54AB82286F2A8D0096F76E /* TargetType+.swift */,
+				3A7E854E2871C7AF00B960FC /* MoyaProvider+.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -394,16 +391,15 @@
 				3A54AB7B286F26B00096F76E /* SignInDataSource.swift in Sources */,
 				3A54AB83286F2A8D0096F76E /* TargetType+.swift in Sources */,
 				3AAF613828378AC600C7B580 /* RoomDTO.swift in Sources */,
-				3A54AB85286F2ACE0096F76E /* Configuration.swift in Sources */,
 				3A54AB8A286F318F0096F76E /* SignInController.swift in Sources */,
 				3AAF61342837855B00C7B580 /* ChatDTO.swift in Sources */,
 				3A54AB81286F2A6F0096F76E /* Response.swift in Sources */,
 				3A54AB88286F2B6C0096F76E /* SignInRepository.swift in Sources */,
+				3A7E854F2871C7AF00B960FC /* MoyaProvider+.swift in Sources */,
 				3AAF61362837860400C7B580 /* ChatRemoteDataSource.swift in Sources */,
 				3AD306A9283A175200A8BB84 /* SearchRoomDTO.swift in Sources */,
 				3AD306A7283A158A00A8BB84 /* CreateRoomDTO.swift in Sources */,
 				3A2E246B28375ADC005B3CBD /* StompManager.swift in Sources */,
-				3A54AB7F286F2A400096F76E /* MoyaProvider+.swift in Sources */,
 				3A54AB78286F25610096F76E /* SignInDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

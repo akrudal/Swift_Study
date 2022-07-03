@@ -8,7 +8,7 @@ import Foundation
 
 enum Configuration {
     private enum Key: String {
-        case baseURL = "http://15.164.169.48:4000"
+        case baseURL = "BASE_URL"
 
         var value: Any {
             guard let value = Bundle.main.infoDictionary?[self.rawValue] as? Any else {
