@@ -60,6 +60,17 @@
                                     <action selector="clickBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JEw-ND-kKW"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDX-bI-XZG">
+                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Su0-r8-mqX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="시작하기"/>
+                                <connections>
+                                    <action selector="clickJoin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QLb-wd-PVb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,7 +82,10 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e6f-aX-4a1" secondAttribute="trailing" constant="20" id="5fE-tn-U9N"/>
                             <constraint firstItem="akC-q1-0u5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6vb-G2-0HQ"/>
                             <constraint firstItem="e99-fS-hdb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="F2T-Yk-x0V"/>
+                            <constraint firstAttribute="bottom" secondItem="gDX-bI-XZG" secondAttribute="bottom" id="UO9-au-wZL"/>
+                            <constraint firstItem="gDX-bI-XZG" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="VIJ-AT-HPs"/>
                             <constraint firstItem="TXq-bN-2qF" firstAttribute="top" secondItem="d16-CU-Wsb" secondAttribute="bottom" constant="40" id="ZPZ-pm-hn4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gDX-bI-XZG" secondAttribute="trailing" id="bwL-17-BRu"/>
                             <constraint firstItem="e99-fS-hdb" firstAttribute="top" secondItem="TXq-bN-2qF" secondAttribute="bottom" constant="50" id="dfp-ae-CrI"/>
                             <constraint firstItem="LMK-Qg-5bR" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="90" id="jyg-e2-0Bk"/>
                             <constraint firstItem="d16-CU-Wsb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ltq-qc-i8G"/>
@@ -81,8 +95,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="joinButton" destination="akC-q1-0u5" id="GlE-hD-FYG"/>
                         <outlet property="memberStack" destination="e6f-aX-4a1" id="Ugx-cF-hAf"/>
                         <outlet property="roomNameLabel" destination="LMK-Qg-5bR" id="tvi-sM-kVm"/>
+                        <outlet property="startButton" destination="gDX-bI-XZG" id="bOR-uN-il9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

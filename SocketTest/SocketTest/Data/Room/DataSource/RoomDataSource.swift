@@ -25,10 +25,14 @@ protocol RoomDataSourceable: AnyObject {
         request: RoomDetailRequest,
         completion: @escaping (Result<RoomDetailResponse, Error>) -> Void
     )
+    
+    func inquiryJoinRoom(
+        request: JoinRoomRequest,
+        completion: @escaping (Result<JoinRoomResponse, Error>) -> Void
+    )
 }
 
 final class RoomDataSource: RoomDataSourceable {
-    
     let provider: MoyaProvider<RoomAPI>
     
     init(provider: MoyaProvider<RoomAPI> = .init(plugins: [NetworkLoggerPlugin()])) {
@@ -49,12 +53,17 @@ final class RoomDataSource: RoomDataSourceable {
     func inquiryRoomDetail(request: RoomDetailRequest, completion: @escaping (Result<RoomDetailResponse, Error>) -> Void) {
         provider.request(.roomDetail(request: request), completion: completion)
     }
+    
+    func inquiryJoinRoom(request: JoinRoomRequest, completion: @escaping (Result<JoinRoomResponse, Error>) -> Void) {
+        provider.request(.joinRoom(request:request), completion: completion)
+    }
 }
 
 enum RoomAPI {
     case createRoom(request: CreateRoomRequest)
     case roomList(request:RoomListRequest)
     case roomDetail(request:RoomDetailRequest)
+    case joinRoom(request: JoinRoomRequest)
 }
 
 extension RoomAPI: TargetType {
@@ -65,6 +74,8 @@ extension RoomAPI: TargetType {
         case .roomList:
             return .get
         case .roomDetail:
+            return .get
+        case .joinRoom:
             return .get
         }
     }
@@ -77,7 +88,8 @@ extension RoomAPI: TargetType {
             return .requestPlain
         case .roomDetail:
             return .requestPlain
-
+        case .joinRoom:
+            return .requestPlain
         }
     }
     
@@ -88,6 +100,8 @@ extension RoomAPI: TargetType {
         case let .roomList(request):
             return ["Authorization": "Bearer " + request.accessToken]
         case let .roomDetail(request):
+            return ["Authorization": "Bearer " + request.accessToken]
+        case let .joinRoom(request):
             return ["Authorization": "Bearer " + request.accessToken]
         }
     }
@@ -100,6 +114,8 @@ extension RoomAPI: TargetType {
             return "/api/room/list"
         case .roomDetail(let request):
             return "/api/room/\(request.roomId)"
+        case .joinRoom(let request):
+            return "/api/room/\(request.roomId)/join"
         }
     }
 }

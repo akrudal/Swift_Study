@@ -11,6 +11,8 @@ class RoomController: UIViewController {
     
     @IBOutlet var roomNameLabel: UILabel!
     @IBOutlet var memberStack: UIStackView!
+    @IBOutlet var joinButton: UIButton!
+    @IBOutlet var startButton: UIButton!
     
     var roomId: Int = 0
 
@@ -32,6 +34,7 @@ class RoomController: UIViewController {
         roomNameLabel.text = data.roomName
         roomNameLabel.sizeToFit()
         
+        memberStack.removeAllArrangedSubview()
         for value in data.roomMembers {
             let label = UILabel()
             label.text = value.name
@@ -39,15 +42,28 @@ class RoomController: UIViewController {
         }
     }
     
+    func isJoin(members: [User]) -> Bool {
+        for user in members {
+            if user.memberId == UserDefaults.standard.integer(forKey: "memberId") {
+                return true
+            }
+        }
+        return false
+    }
+    
     func searchRoomDetail() {
         let request: RoomDetailRequest = RoomDetailRequest(accessToken: UserDefaults.standard.string(forKey: "accessToken")!, roomId: roomId)
         let repository: RoomRepository = RoomRepository()
         
-        repository.inquiryRoomDetail(request: request) { result in
+        repository.inquiryRoomDetail(request: request) { [self] result in
             switch result {
             case .success(let response):
                 print(response)
                 self.setData(data: response)
+                if self.isJoin(members: response.roomMembers) {
+                    self.joinButton.isHidden = true
+                    self.startButton.isHidden = false
+                }
             case .failure(let error):
                 print(error)
             }
@@ -56,5 +72,26 @@ class RoomController: UIViewController {
     
     
     @IBAction func clickJoin(_ sender: Any) {
+        let request: JoinRoomRequest = JoinRoomRequest(accessToken: UserDefaults.standard.string(forKey: "accessToken")!, roomId: roomId)
+        let repository: RoomRepository = RoomRepository()
+        
+        repository.inquiryJoinRoom(request: request) { result in
+            switch result {
+            case.success(let response):
+                print(response)
+                self.searchRoomDetail()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}
+
+extension UIStackView {
+    func removeAllArrangedSubview() {
+        self.arrangedSubviews.forEach({ child in
+            self.removeArrangedSubview(child)
+            child.removeFromSuperview()
+        })
     }
 }

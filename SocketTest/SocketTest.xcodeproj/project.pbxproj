@@ -40,6 +40,7 @@
 		3A769EFD287C609200A5137D /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A769EFC287C609200A5137D /* RoomController.swift */; };
 		3A769EFF287C619600A5137D /* SearchRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A769EFE287C619600A5137D /* SearchRoomDTO.swift */; };
 		3A7E854F2871C7AF00B960FC /* MoyaProvider+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E854E2871C7AF00B960FC /* MoyaProvider+.swift */; };
+		3A8C4E9B287F1299006035CF /* JoinRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C4E9A287F1298006035CF /* JoinRoomDTO.swift */; };
 		3AAF61342837855B00C7B580 /* ChatDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF61332837855B00C7B580 /* ChatDTO.swift */; };
 		3AAF61362837860400C7B580 /* ChatRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF61352837860400C7B580 /* ChatRemoteDataSource.swift */; };
 		3AAF613828378AC600C7B580 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF613728378AC600C7B580 /* RoomDTO.swift */; };
@@ -85,6 +86,7 @@
 		3A769EFC287C609200A5137D /* RoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomController.swift; sourceTree = "<group>"; };
 		3A769EFE287C619600A5137D /* SearchRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoomDTO.swift; sourceTree = "<group>"; };
 		3A7E854E2871C7AF00B960FC /* MoyaProvider+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+.swift"; sourceTree = "<group>"; };
+		3A8C4E9A287F1298006035CF /* JoinRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoomDTO.swift; sourceTree = "<group>"; };
 		3AAF61332837855B00C7B580 /* ChatDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDTO.swift; sourceTree = "<group>"; };
 		3AAF61352837860400C7B580 /* ChatRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRemoteDataSource.swift; sourceTree = "<group>"; };
 		3AAF613728378AC600C7B580 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				3AD306A6283A158A00A8BB84 /* CreateRoomDTO.swift */,
 				3AD306A8283A175200A8BB84 /* SearchRoomListDTO.swift */,
 				3A769EFE287C619600A5137D /* SearchRoomDTO.swift */,
+				3A8C4E9A287F1298006035CF /* JoinRoomDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				3A2E246B28375ADC005B3CBD /* StompManager.swift in Sources */,
 				3A54AB78286F25610096F76E /* SignInDTO.swift in Sources */,
 				3A2C0DE62877018F003D8A69 /* SignUpDataSource.swift in Sources */,
+				3A8C4E9B287F1299006035CF /* JoinRoomDTO.swift in Sources */,
 				3A2C0DDE2876FC6D003D8A69 /* SignController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

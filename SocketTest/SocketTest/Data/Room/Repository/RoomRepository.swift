@@ -24,6 +24,11 @@ protocol RoomRepositable: AnyObject {
         request: RoomDetailRequest,
         completion: @escaping (Result<RoomDetailResponse, Error>) -> Void
     )
+    
+    func inquiryJoinRoom(
+        request: JoinRoomRequest,
+        completion: @escaping (Result<JoinRoomResponse, Error>) -> Void
+    )
 }
 
 final class RoomRepository {
@@ -52,5 +57,12 @@ final class RoomRepository {
         completion: @escaping (Result<RoomDetailResponse, Error>) -> Void
     ) {
         remoteDataSource.inquiryRoomDetail(request: request, completion: completion)
+    }
+    
+    func inquiryJoinRoom(
+        request: JoinRoomRequest,
+        completion: @escaping (Result<JoinRoomResponse, Error>) -> Void
+    ) {
+        remoteDataSource.inquiryJoinRoom(request: request, completion: completion)
     }
 }
