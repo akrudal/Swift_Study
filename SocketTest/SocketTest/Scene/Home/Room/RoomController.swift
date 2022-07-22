@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StompClientLib
 
 class RoomController: UIViewController {
     
@@ -13,12 +14,14 @@ class RoomController: UIViewController {
     @IBOutlet var memberStack: UIStackView!
     @IBOutlet var joinButton: UIButton!
     @IBOutlet var startButton: UIButton!
-    
+    let stompManager: StompManager = StompManager()
     var roomId: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         searchRoomDetail()
+        stompManager.setRoomId(id: roomId)
+        stompManager.registerSocket()
         // Do any additional setup after loading the view.
     }
     
@@ -84,6 +87,18 @@ class RoomController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    @IBAction func clickStart(_ sender: Any) {
+        let type: String = "READY"
+        let senderId: CLong = UserDefaults.standard.integer(forKey: "memberId")
+        stompManager.subscribeForMember(memberId: senderId)
+        stompManager.sendMessage(type: type, senderId: senderId)
+        
+        let storyboard = UIStoryboard(name: "Ready", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "ready")
+                viewController.modalPresentationStyle = .overFullScreen
+                self.present(viewController, animated: true)
     }
 }
 

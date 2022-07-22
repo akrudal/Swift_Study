@@ -20,7 +20,7 @@ protocol UserDataSourceable: AnyObject {
 final class UserDataSource: UserDataSourceable {
     let provider: MoyaProvider<UserAPI>
     
-    init(provider: MoyaProvider<UserAPI> = .init()) {
+    init(provider: MoyaProvider<UserAPI> = .init(plugins: [])) {
         self.provider = provider
     }
     

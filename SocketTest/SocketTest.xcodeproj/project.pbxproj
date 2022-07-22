@@ -41,6 +41,8 @@
 		3A769EFF287C619600A5137D /* SearchRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A769EFE287C619600A5137D /* SearchRoomDTO.swift */; };
 		3A7E854F2871C7AF00B960FC /* MoyaProvider+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E854E2871C7AF00B960FC /* MoyaProvider+.swift */; };
 		3A8C4E9B287F1299006035CF /* JoinRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C4E9A287F1298006035CF /* JoinRoomDTO.swift */; };
+		3A8C4EA628801CA5006035CF /* Ready.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8C4EA528801CA5006035CF /* Ready.storyboard */; };
+		3A8C4EA8288029B0006035CF /* ReadyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C4EA7288029B0006035CF /* ReadyController.swift */; };
 		3AAF61342837855B00C7B580 /* ChatDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF61332837855B00C7B580 /* ChatDTO.swift */; };
 		3AAF61362837860400C7B580 /* ChatRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF61352837860400C7B580 /* ChatRemoteDataSource.swift */; };
 		3AAF613828378AC600C7B580 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAF613728378AC600C7B580 /* RoomDTO.swift */; };
@@ -48,6 +50,9 @@
 		3AAFE9FD28784D45005529D8 /* RoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFE9FC28784D45005529D8 /* RoomRepository.swift */; };
 		3AD306A7283A158A00A8BB84 /* CreateRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD306A6283A158A00A8BB84 /* CreateRoomDTO.swift */; };
 		3AD306A9283A175200A8BB84 /* SearchRoomListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD306A8283A175200A8BB84 /* SearchRoomListDTO.swift */; };
+		3AECCF05288048B900AC3449 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AECCF04288048B900AC3449 /* Map.storyboard */; };
+		3AECCF07288050F900AC3449 /* OthersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECCF06288050F900AC3449 /* OthersTableViewCell.swift */; };
+		3AECCF0928805BA700AC3449 /* SocketDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECCF0828805BA700AC3449 /* SocketDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +92,8 @@
 		3A769EFE287C619600A5137D /* SearchRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoomDTO.swift; sourceTree = "<group>"; };
 		3A7E854E2871C7AF00B960FC /* MoyaProvider+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+.swift"; sourceTree = "<group>"; };
 		3A8C4E9A287F1298006035CF /* JoinRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoomDTO.swift; sourceTree = "<group>"; };
+		3A8C4EA528801CA5006035CF /* Ready.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ready.storyboard; sourceTree = "<group>"; };
+		3A8C4EA7288029B0006035CF /* ReadyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyController.swift; sourceTree = "<group>"; };
 		3AAF61332837855B00C7B580 /* ChatDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDTO.swift; sourceTree = "<group>"; };
 		3AAF61352837860400C7B580 /* ChatRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRemoteDataSource.swift; sourceTree = "<group>"; };
 		3AAF613728378AC600C7B580 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
@@ -94,6 +101,9 @@
 		3AAFE9FC28784D45005529D8 /* RoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRepository.swift; sourceTree = "<group>"; };
 		3AD306A6283A158A00A8BB84 /* CreateRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomDTO.swift; sourceTree = "<group>"; };
 		3AD306A8283A175200A8BB84 /* SearchRoomListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoomListDTO.swift; sourceTree = "<group>"; };
+		3AECCF04288048B900AC3449 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		3AECCF06288050F900AC3449 /* OthersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersTableViewCell.swift; sourceTree = "<group>"; };
+		3AECCF0828805BA700AC3449 /* SocketDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketDTO.swift; sourceTree = "<group>"; };
 		42A57DE52F80320BA0DF78F8 /* Pods-SocketTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocketTest.release.xcconfig"; path = "Target Support Files/Pods-SocketTest/Pods-SocketTest.release.xcconfig"; sourceTree = "<group>"; };
 		C4E792DFC3B725A77BBC847E /* Pods_SocketTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocketTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -167,7 +177,6 @@
 		3A2C0DEC287708A3003D8A69 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				3A2E246A28375ADC005B3CBD /* StompManager.swift */,
 				3A2C0DED287708B8003D8A69 /* GlobalFunc.swift */,
 			);
 			path = Util;
@@ -176,6 +185,7 @@
 		3A2C0DEF28770DD6003D8A69 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3A8C4EA328801C0C006035CF /* Run */,
 				3A54AB6B286F0FD20096F76E /* Sign */,
 				3A2C0DE72877029B003D8A69 /* Home */,
 			);
@@ -288,6 +298,7 @@
 		3A6559F2283522F100FA2485 /* SocketTest */ = {
 			isa = PBXGroup;
 			children = (
+				3A8C4E9C287F5416006035CF /* Stomp */,
 				3A2C0DEC287708A3003D8A69 /* Util */,
 				3A2C0DEF28770DD6003D8A69 /* Scene */,
 				3AAF612E2837852B00C7B580 /* Data */,
@@ -298,6 +309,33 @@
 				3A655A01283522F400FA2485 /* Info.plist */,
 			);
 			path = SocketTest;
+			sourceTree = "<group>";
+		};
+		3A8C4E9C287F5416006035CF /* Stomp */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E246A28375ADC005B3CBD /* StompManager.swift */,
+				3AECCF0828805BA700AC3449 /* SocketDTO.swift */,
+			);
+			path = Stomp;
+			sourceTree = "<group>";
+		};
+		3A8C4EA328801C0C006035CF /* Run */ = {
+			isa = PBXGroup;
+			children = (
+				3AECCF03288048A100AC3449 /* Map */,
+				3A8C4EA428801C81006035CF /* Ready */,
+			);
+			path = Run;
+			sourceTree = "<group>";
+		};
+		3A8C4EA428801C81006035CF /* Ready */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C4EA528801CA5006035CF /* Ready.storyboard */,
+				3A8C4EA7288029B0006035CF /* ReadyController.swift */,
+			);
+			path = Ready;
 			sourceTree = "<group>";
 		};
 		3AAF612E2837852B00C7B580 /* Data */ = {
@@ -392,6 +430,15 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
+		3AECCF03288048A100AC3449 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3AECCF04288048B900AC3449 /* Map.storyboard */,
+				3AECCF06288050F900AC3449 /* OthersTableViewCell.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		8FD01A654A975192661D6D22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,8 +518,10 @@
 			files = (
 				3A2C0DE9287702A7003D8A69 /* Home.storyboard in Resources */,
 				3A655A00283522F400FA2485 /* LaunchScreen.storyboard in Resources */,
+				3AECCF05288048B900AC3449 /* Map.storyboard in Resources */,
 				3A54AB73286F15B80096F76E /* SignIn.storyboard in Resources */,
 				3A54AB75286F22DD0096F76E /* SignUp.storyboard in Resources */,
+				3A8C4EA628801CA5006035CF /* Ready.storyboard in Resources */,
 				3A769EFB287C5D0700A5137D /* Room.storyboard in Resources */,
 				3A6559FD283522F400FA2485 /* Assets.xcassets in Resources */,
 				3A54AB70286F10330096F76E /* Sign.storyboard in Resources */,
@@ -540,6 +589,7 @@
 				3A0C3E9B28771B7F00DDF329 /* UserDTO.swift in Sources */,
 				3A54AB8A286F318F0096F76E /* SignInController.swift in Sources */,
 				3A769EFD287C609200A5137D /* RoomController.swift in Sources */,
+				3AECCF07288050F900AC3449 /* OthersTableViewCell.swift in Sources */,
 				3AAF61342837855B00C7B580 /* ChatDTO.swift in Sources */,
 				3A54AB81286F2A6F0096F76E /* Response.swift in Sources */,
 				3A54AB88286F2B6C0096F76E /* SignInRepository.swift in Sources */,
@@ -559,8 +609,10 @@
 				3A2E246B28375ADC005B3CBD /* StompManager.swift in Sources */,
 				3A54AB78286F25610096F76E /* SignInDTO.swift in Sources */,
 				3A2C0DE62877018F003D8A69 /* SignUpDataSource.swift in Sources */,
+				3AECCF0928805BA700AC3449 /* SocketDTO.swift in Sources */,
 				3A8C4E9B287F1299006035CF /* JoinRoomDTO.swift in Sources */,
 				3A2C0DDE2876FC6D003D8A69 /* SignController.swift in Sources */,
+				3A8C4EA8288029B0006035CF /* ReadyController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

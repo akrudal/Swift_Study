@@ -20,7 +20,7 @@ protocol SignUpDataSourceable: AnyObject {
 final class SignUpDataSource: SignUpDataSourceable {
     let provider: MoyaProvider<SignUpAPI>
     
-    init(provider: MoyaProvider<SignUpAPI> = .init(plugins: [NetworkLoggerPlugin()])) {
+    init(provider: MoyaProvider<SignUpAPI> = .init(plugins: [])) {
         self.provider = provider
     }
     

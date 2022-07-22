@@ -68,7 +68,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="시작하기"/>
                                 <connections>
-                                    <action selector="clickJoin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QLb-wd-PVb"/>
+                                    <action selector="clickStart:" destination="Y6W-OH-hqX" eventType="touchDown" id="tI9-J5-Ydi"/>
                                 </connections>
                             </button>
                         </subviews>

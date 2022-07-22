@@ -30,12 +30,17 @@ protocol RoomDataSourceable: AnyObject {
         request: JoinRoomRequest,
         completion: @escaping (Result<JoinRoomResponse, Error>) -> Void
     )
+    
+//    func inquiryReadyRoom(
+//        request: ReadyRoomRequest,
+//        completion: @escaping (Result<ReadyRoomResponse, Error>) -> Void
+//    )
 }
 
 final class RoomDataSource: RoomDataSourceable {
     let provider: MoyaProvider<RoomAPI>
     
-    init(provider: MoyaProvider<RoomAPI> = .init(plugins: [NetworkLoggerPlugin()])) {
+    init(provider: MoyaProvider<RoomAPI> = .init(plugins: [])) {
         self.provider = provider
     }
     
@@ -57,6 +62,10 @@ final class RoomDataSource: RoomDataSourceable {
     func inquiryJoinRoom(request: JoinRoomRequest, completion: @escaping (Result<JoinRoomResponse, Error>) -> Void) {
         provider.request(.joinRoom(request:request), completion: completion)
     }
+    
+//    func inquiryReadyRoom(request: ReadyRoomRequest, completion: @escaping (Result<ReadyRoomResponse, Error>) -> Void) {
+//        provider.request(.readyRoom(request:request), completion: completion)
+//    }
 }
 
 enum RoomAPI {
@@ -64,6 +73,7 @@ enum RoomAPI {
     case roomList(request:RoomListRequest)
     case roomDetail(request:RoomDetailRequest)
     case joinRoom(request: JoinRoomRequest)
+//    case readyRoom(request: ReadyRoomRequest)
 }
 
 extension RoomAPI: TargetType {
