@@ -6,6 +6,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -154,6 +155,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN1-PP-lp5">
                                 <rect key="frame" x="0.0" y="284" width="414" height="612"/>
                                 <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" semanticContentAttribute="playback" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EMj-Eu-MBk">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="612"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="612" id="CFh-v1-fMf"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="luU-I1-3L7" customClass="AlignedCollectionViewFlowLayout" customModule="AlignedCollectionViewFlowLayout">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="barCell" id="hS1-cU-gM3" customClass="BarCell" customModule="RunningTeam" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="162" height="616"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Lc3-6k-6rD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="616"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <size key="customSize" width="162" height="616"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="XGh-Yd-rHJ"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="4Kp-8b-fLA"/>
+                                        </connections>
+                                    </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfo-JT-y5N">
                                         <rect key="frame" x="0.0" y="255" width="414" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,28 +191,16 @@
                                             <constraint firstAttribute="height" constant="1" id="SpV-vT-cgN"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="IgM-fR-f2D">
-                                        <rect key="frame" x="0.0" y="-10" width="413" height="612"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqy-P2-pDy" customClass="BarView" customModule="RunningTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="484" width="413" height="128"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="612" id="fKt-mb-wTT"/>
-                                        </constraints>
-                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Lfo-JT-y5N" secondAttribute="trailing" id="0SJ-qN-ssA"/>
-                                    <constraint firstAttribute="bottom" secondItem="IgM-fR-f2D" secondAttribute="bottom" constant="10" id="6z0-Wr-cvH"/>
-                                    <constraint firstItem="IgM-fR-f2D" firstAttribute="top" secondItem="xN1-PP-lp5" secondAttribute="top" constant="-10" id="7eE-8q-4Zd"/>
-                                    <constraint firstItem="IgM-fR-f2D" firstAttribute="leading" secondItem="xN1-PP-lp5" secondAttribute="leading" id="7ry-uX-coV"/>
-                                    <constraint firstAttribute="height" constant="612" id="ScJ-3F-vFm"/>
-                                    <constraint firstAttribute="trailing" secondItem="IgM-fR-f2D" secondAttribute="trailing" constant="1" id="Yec-ty-TpD"/>
-                                    <constraint firstAttribute="bottom" secondItem="Lfo-JT-y5N" secondAttribute="bottom" constant="356" id="eJF-Pb-cEP"/>
-                                    <constraint firstItem="Lfo-JT-y5N" firstAttribute="leading" secondItem="xN1-PP-lp5" secondAttribute="leading" id="i4g-dN-9k0"/>
+                                    <constraint firstAttribute="bottom" secondItem="EMj-Eu-MBk" secondAttribute="bottom" id="2a8-Wv-VY4"/>
+                                    <constraint firstItem="EMj-Eu-MBk" firstAttribute="top" secondItem="xN1-PP-lp5" secondAttribute="top" id="5Bb-Bo-xTn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lfo-JT-y5N" secondAttribute="trailing" id="Ahb-nh-oko"/>
+                                    <constraint firstItem="Lfo-JT-y5N" firstAttribute="leading" secondItem="xN1-PP-lp5" secondAttribute="leading" id="GgD-Hy-zII"/>
+                                    <constraint firstItem="EMj-Eu-MBk" firstAttribute="leading" secondItem="xN1-PP-lp5" secondAttribute="leading" id="Jcp-As-wCv"/>
+                                    <constraint firstAttribute="height" constant="612" id="ecw-ME-tZc"/>
+                                    <constraint firstAttribute="trailing" secondItem="EMj-Eu-MBk" secondAttribute="trailing" id="jcg-IJ-E2w"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lfo-JT-y5N" secondAttribute="bottom" constant="356" id="wY2-Oi-zYN"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -192,13 +210,16 @@
                             <constraint firstItem="QAi-o9-ehs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6JF-3B-stW"/>
                             <constraint firstItem="Ds2-ZG-jw6" firstAttribute="top" secondItem="QAi-o9-ehs" secondAttribute="bottom" constant="12" id="B40-M1-FaN"/>
                             <constraint firstItem="QAi-o9-ehs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hgf-Po-hmG"/>
-                            <constraint firstItem="xN1-PP-lp5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UtE-UM-5Sd"/>
+                            <constraint firstItem="xN1-PP-lp5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TwA-Pd-lcc"/>
+                            <constraint firstItem="xN1-PP-lp5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UGP-6o-BSH"/>
                             <constraint firstItem="QAi-o9-ehs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vmd-Fw-4I9"/>
                             <constraint firstItem="Ds2-ZG-jw6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Y5h-g3-0OX"/>
-                            <constraint firstAttribute="bottom" secondItem="xN1-PP-lp5" secondAttribute="bottom" id="tzt-kX-u3X"/>
-                            <constraint firstAttribute="trailing" secondItem="xN1-PP-lp5" secondAttribute="trailing" id="x4H-Zs-CLX"/>
+                            <constraint firstAttribute="bottom" secondItem="xN1-PP-lp5" secondAttribute="bottom" id="pcn-ZP-E0o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="barCollectionView" destination="EMj-Eu-MBk" id="pQw-tO-VtY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

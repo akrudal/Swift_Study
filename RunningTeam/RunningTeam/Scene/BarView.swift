@@ -7,31 +7,54 @@
 
 import UIKit
 
-@IBDesignable
 class BarView: UIView {
+  
+    let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.layer.masksToBounds = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        return imageView
+    }()
     
+    @IBInspectable var height: CGFloat = 356
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 99, height: height)
+    }
+
+    override func prepareForInterfaceBuilder() {
+         invalidateIntrinsicContentSize()
+    }
+
+    func setHeight(varHeight: CGFloat) {
+        height = varHeight
+    }
+    
+    @objc func tappedBar(_ gesture: UITapGestureRecognizer) {
+        print("hi")
+    }
+    
+    func setImageViewLayout() {
+        imageView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        imageView.heightAnchor.constraint(equalTo: widthAnchor, constant: -20).isActive = true
+    }
+    
+    init(imageName: String) {
+        super.init(frame: .zero)
+        backgroundColor = .systemBlue
+        imageView.image = UIImage(named: imageName)
+        addSubview(imageView)
+        setImageViewLayout()
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        loadView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        loadView()
-    }
-    
-    private func loadView() {
-        guard let view = loadViewFromNib(nib: "BarView") else {
-            return
-        }
-        view.frame = bounds
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(view)
-    }
-
-    func loadViewFromNib(nib: String) -> UIView? {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: nib, bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
 }
