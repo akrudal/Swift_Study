@@ -6,7 +6,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -155,35 +154,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xN1-PP-lp5">
                                 <rect key="frame" x="0.0" y="284" width="414" height="612"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" semanticContentAttribute="playback" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EMj-Eu-MBk">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OHJ-d2-PHO">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="612"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="612" id="CFh-v1-fMf"/>
+                                            <constraint firstAttribute="height" constant="612" id="GV2-Lv-Q1h"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="luU-I1-3L7" customClass="AlignedCollectionViewFlowLayout" customModule="AlignedCollectionViewFlowLayout">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="barCell" id="hS1-cU-gM3" customClass="BarCell" customModule="RunningTeam" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="162" height="616"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Lc3-6k-6rD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="162" height="616"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </collectionViewCellContentView>
-                                                <color key="backgroundColor" name="AccentColor"/>
-                                                <size key="customSize" width="162" height="616"/>
-                                            </collectionViewCell>
-                                        </cells>
-                                        <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="XGh-Yd-rHJ"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="4Kp-8b-fLA"/>
-                                        </connections>
-                                    </collectionView>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfo-JT-y5N">
                                         <rect key="frame" x="0.0" y="255" width="414" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,13 +169,13 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="EMj-Eu-MBk" secondAttribute="bottom" id="2a8-Wv-VY4"/>
-                                    <constraint firstItem="EMj-Eu-MBk" firstAttribute="top" secondItem="xN1-PP-lp5" secondAttribute="top" id="5Bb-Bo-xTn"/>
+                                    <constraint firstAttribute="bottom" secondItem="OHJ-d2-PHO" secondAttribute="bottom" id="3iq-rd-WHJ"/>
                                     <constraint firstAttribute="trailing" secondItem="Lfo-JT-y5N" secondAttribute="trailing" id="Ahb-nh-oko"/>
                                     <constraint firstItem="Lfo-JT-y5N" firstAttribute="leading" secondItem="xN1-PP-lp5" secondAttribute="leading" id="GgD-Hy-zII"/>
-                                    <constraint firstItem="EMj-Eu-MBk" firstAttribute="leading" secondItem="xN1-PP-lp5" secondAttribute="leading" id="Jcp-As-wCv"/>
+                                    <constraint firstItem="OHJ-d2-PHO" firstAttribute="leading" secondItem="xN1-PP-lp5" secondAttribute="leading" id="W1k-Pd-f90"/>
                                     <constraint firstAttribute="height" constant="612" id="ecw-ME-tZc"/>
-                                    <constraint firstAttribute="trailing" secondItem="EMj-Eu-MBk" secondAttribute="trailing" id="jcg-IJ-E2w"/>
+                                    <constraint firstAttribute="trailing" secondItem="OHJ-d2-PHO" secondAttribute="trailing" id="g9j-bT-jhu"/>
+                                    <constraint firstItem="OHJ-d2-PHO" firstAttribute="top" secondItem="xN1-PP-lp5" secondAttribute="top" id="rzI-IL-IMK"/>
                                     <constraint firstAttribute="bottom" secondItem="Lfo-JT-y5N" secondAttribute="bottom" constant="356" id="wY2-Oi-zYN"/>
                                 </constraints>
                             </view>
@@ -218,7 +194,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="barCollectionView" destination="EMj-Eu-MBk" id="pQw-tO-VtY"/>
+                        <outlet property="barStackView" destination="OHJ-d2-PHO" id="pW9-jb-Lvu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
