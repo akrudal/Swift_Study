@@ -40,5 +40,10 @@ class ViewController: UIViewController {
             barStackView.addArrangedSubview(button)
         }
         barStackView.layoutIfNeeded()
+        for case let i as BarButton in barStackView.arrangedSubviews {
+            i.layer.cornerRadius = i.frame.size.width / 2
+            i.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+            i.setImageViewLayout()
+        }
     }
 }

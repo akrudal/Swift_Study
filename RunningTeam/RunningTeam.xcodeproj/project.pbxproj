@@ -13,8 +13,8 @@
 		3A3D97DB288AC2070035A8DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3D97D9288AC2070035A8DA /* Main.storyboard */; };
 		3A3D97DD288AC2080035A8DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A3D97DC288AC2080035A8DA /* Assets.xcassets */; };
 		3A3D97E0288AC2080035A8DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A3D97DE288AC2080035A8DA /* LaunchScreen.storyboard */; };
+		3A8EEEC82897BA1400738C91 /* BarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8EEEC72897BA1400738C91 /* BarDetailView.swift */; };
 		3ACCFD8E28928C2000BFCEC7 /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCFD8D28928C2000BFCEC7 /* BarCell.swift */; };
-		3ACCFD922892A24200BFCEC7 /* BarButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ACCFD912892A24200BFCEC7 /* BarButton.xib */; };
 		3ACCFD942892A61D00BFCEC7 /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCFD932892A61D00BFCEC7 /* BarButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +27,8 @@
 		3A3D97DC288AC2080035A8DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A3D97DF288AC2080035A8DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A3D97E1288AC2080035A8DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A8EEEC72897BA1400738C91 /* BarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarDetailView.swift; sourceTree = "<group>"; };
 		3ACCFD8D28928C2000BFCEC7 /* BarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
-		3ACCFD912892A24200BFCEC7 /* BarButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarButton.xib; sourceTree = "<group>"; };
 		3ACCFD932892A61D00BFCEC7 /* BarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,8 +78,8 @@
 				3A3D97D9288AC2070035A8DA /* Main.storyboard */,
 				3A3D97D7288AC2070035A8DA /* ViewController.swift */,
 				3ACCFD8D28928C2000BFCEC7 /* BarCell.swift */,
-				3ACCFD912892A24200BFCEC7 /* BarButton.xib */,
 				3ACCFD932892A61D00BFCEC7 /* BarButton.swift */,
+				3A8EEEC72897BA1400738C91 /* BarDetailView.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -145,7 +145,6 @@
 				3A3D97E0288AC2080035A8DA /* LaunchScreen.storyboard in Resources */,
 				3A3D97DD288AC2080035A8DA /* Assets.xcassets in Resources */,
 				3A3D97DB288AC2070035A8DA /* Main.storyboard in Resources */,
-				3ACCFD922892A24200BFCEC7 /* BarButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3D97D8288AC2070035A8DA /* ViewController.swift in Sources */,
+				3A8EEEC82897BA1400738C91 /* BarDetailView.swift in Sources */,
 				3ACCFD8E28928C2000BFCEC7 /* BarCell.swift in Sources */,
 				3A3D97D4288AC2070035A8DA /* AppDelegate.swift in Sources */,
 				3A3D97D6288AC2070035A8DA /* SceneDelegate.swift in Sources */,

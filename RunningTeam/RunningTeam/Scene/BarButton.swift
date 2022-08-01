@@ -28,12 +28,11 @@ class BarButton: UIButton {
         myPace = data.pace
         myTime = data.time
     }
-    
+
     func setImageViewLayout() {
-        imageView?.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        imageView?.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        imageView?.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        imageView?.heightAnchor.constraint(equalTo: widthAnchor, constant: -20).isActive = true
+        // bottom edge insets 바꿔야 함. 계산 이후 수정하기
+        self.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: self.frame.size.height - self.frame.width + 5, right: 5)
+        self.imageView?.layer.cornerRadius = (self.frame.width - 10) / 2
     }
     
     override init(frame: CGRect) {
@@ -47,9 +46,11 @@ class BarButton: UIButton {
     }
     
     func setupView() {
-        layer.cornerRadius = 4
-        layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        layer.masksToBounds = true
         clipsToBounds = true
+        contentVerticalAlignment = .top
+        backgroundColor = .systemBlue
+        heightAnchor.constraint(equalToConstant: 356).isActive = true
     }
     
     func getMyData() -> Running {
