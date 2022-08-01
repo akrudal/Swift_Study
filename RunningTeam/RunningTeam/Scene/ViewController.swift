@@ -28,7 +28,15 @@ class ViewController: UIViewController {
     }
     
     @objc func onClick(sender: BarButton!) {
-        print(sender.getMyData())
+        let detailView = BarDetailView()
+        detailView.translatesAutoresizingMaskIntoConstraints = false
+        detailView.addLabel(with: sender.getMyData())
+        view.addSubview(detailView)
+        detailView.isHidden = false
+        detailView.widthAnchor.constraint(equalToConstant: 240).isActive = true
+        detailView.topAnchor.constraint(equalTo: sender.topAnchor, constant: 100).isActive = true
+        detailView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
+        detailView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     func makeBars() {
