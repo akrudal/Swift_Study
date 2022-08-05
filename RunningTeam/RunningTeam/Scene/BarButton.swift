@@ -15,6 +15,7 @@ struct Running {
 
 class BarButton: UIButton {
     
+    var myView: BarDetailView = BarDetailView()
     var myDistance: String = ""
     var myPace: String = ""
     var myTime: String = ""
@@ -51,6 +52,10 @@ class BarButton: UIButton {
         contentVerticalAlignment = .top
         backgroundColor = .systemBlue
         heightAnchor.constraint(equalToConstant: 356).isActive = true
+    }
+    
+    func setmyView(view: BarDetailView) {
+        myView = view
     }
     
     func getMyData() -> Running {
