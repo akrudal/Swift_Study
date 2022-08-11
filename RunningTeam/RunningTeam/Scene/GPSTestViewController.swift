@@ -22,41 +22,56 @@ class GPSTestViewController: UIViewController {
     
     var locationManager: CLLocationManager!
     let logger = Logger()
-    
+    var totalDistance: Double = 0
+    var startLocation: CLLocation!
+    var preLocation: CLLocation!
+    var startTime = Date()
+    var timer: Timer?
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        
-        // 정확도를 최고로 설정 => 배터리 관련하여 조절할 수 있음
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        // 앱이 suspend 상태일 때 위치정보를 수신받게 설정
         locationManager.allowsBackgroundLocationUpdates = true
-        // location manager가 위치정보를 자동으로 일시정지 할 수 없게 설정
         locationManager.pausesLocationUpdatesAutomatically = false
         getLocationUsagePermission()
-        
         myMapkit.delegate = self
         myMapkit.showsUserLocation = true
-        
-        locationManager.startUpdatingLocation()
     }
     
+    @objc func timerCallback() {
+        let timeInterval = Date().timeIntervalSince(self.startTime)
+        
+        let minute = (Int)(timeInterval/60) // 초를 60으로 나누어 분을 구한다
+        let second = (Int)(fmod(timeInterval, 60)) // 초를 구한다
+
+        timeLabel.text = String(format:"%02d : %02d", minute, second)
+        
+        print(Int(timeInterval))
+        paceLabel.text = String(1000/(Int(totalDistance)/Int(timeInterval)))
+    }
     
     @IBAction func stopUpdateLocation(_ sender: UIButton) {
         logger.debug("stop button touched")
         locationManager.stopUpdatingLocation()
+        timer!.invalidate()
+    }
+    
+    @IBAction func startUpdateLocation(_ sender: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+        startTime = Date()
+        
+        locationManager.startUpdatingLocation()
     }
 }
 
 extension GPSTestViewController: CLLocationManagerDelegate, MKMapViewDelegate {
-    
     func getLocationUsagePermission() {
         self.locationManager.requestAlwaysAuthorization()
     }
-    
-    // 애플리케이션 내에서 사용자 위치를 가져오기 위한 현재 위치 권한을 반환한다.
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways :
@@ -81,64 +96,28 @@ extension GPSTestViewController: CLLocationManagerDelegate, MKMapViewDelegate {
         return coordinate2D
     }
     
-    func setAnnotation(latitude: CLLocationDegrees, longtitude: CLLocationDegrees, delta span: Double,
-                       title strTitle: String, subtitle strSubTitle: String, pinColor color: UIColor) {
-        let annotation = ColorPointAnnotation()
-        annotation.coordinate = goLocation(latitude: latitude, longtitude: longtitude, delta: span)
-        annotation.title = strTitle
-        annotation.subtitle = strSubTitle
-        annotation.pinTintColor = color
-        myMapkit.addAnnotation(annotation)
-    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let lastLocation = locations.last
-        let latitude = (lastLocation?.coordinate.latitude)!
-        let longtitude = (lastLocation?.coordinate.longitude)!
+        if startLocation == nil {
+            startLocation = locations.first
+        } else if let lastLocation = locations.last {
+            let latitude = (lastLocation.coordinate.latitude)
+            let longtitude = (lastLocation.coordinate.longitude)
+            
+            latitudeLabel.text = String(latitude)
+            longtitudeLabel.text = String(longtitude)
+            _ = goLocation(latitude: latitude, longtitude: longtitude, delta: 0.01)
+            
+            totalDistance += preLocation.distance(from: lastLocation)
+            distanceLabel.text = String("\(totalDistance/1000)km")
+        }
         
-        logger.debug("latitude is \(latitude), longtitude is \(longtitude)")
-
-//        let locationInfo: LocationInfo = LocationInfo()
-//        locationInfo.id = locationInfo.autoIncrementKey()
-//        locationInfo.latitude = String(format: "%.7f", latitude)
-//        locationInfo.longtitude = String(format: "%.7f", longtitude)
-        
-        setAnnotation(latitude: latitude, longtitude: longtitude, delta: 0.05, title: "위치 감지", subtitle: "자동 감지", pinColor: UIColor.orange)
-        // delta 값은 지도의 크기를 정한다. 값이 작을수록 확대하는 효과가 있다.
-        _ = goLocation(latitude: latitude, longtitude: longtitude, delta: 0.01)
-        
-        // 다음 코드는 업데이트를 멈출 경우 사용한다.
-        // locationManager.stopUpdatingLocation()
-        
-        // 내부 DB에 저장 코드 추후 작성
+        preLocation = locations.last
     }
     
     
     // 어떤 위치로든 위치 요청이 실패할 경우 호출된다.
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
-    }
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        logger.debug("mapView:viewFor:")
-        
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
-        
-        if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
-        } else {
-            annotationView?.annotation = annotation
-        }
-        
-        if let annotation = annotation as? ColorPointAnnotation {
-            annotationView?.pinTintColor = annotation.pinTintColor
-        }
-        
-        return annotationView
+        logger.debug("실패")
     }
 }
 
-
-class ColorPointAnnotation: MKPointAnnotation {
-    var pinTintColor: UIColor?
-}

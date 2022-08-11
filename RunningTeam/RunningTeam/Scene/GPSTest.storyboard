@@ -93,6 +93,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wf-bh-PbV">
+                                <rect key="frame" x="50" y="649" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vTv-uJ-HX6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="기록 시작"/>
+                                <connections>
+                                    <action selector="startUpdateLocation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5bS-Ei-o1D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,10 +113,12 @@
                             <constraint firstItem="7el-yw-TwM" firstAttribute="top" secondItem="Y8W-Ig-Ltv" secondAttribute="bottom" constant="10" id="5Gb-BF-jRT"/>
                             <constraint firstItem="SDJ-91-rDB" firstAttribute="top" secondItem="HCx-zN-t7V" secondAttribute="bottom" constant="100" id="5sh-jj-NXp"/>
                             <constraint firstItem="1Dn-Vd-jor" firstAttribute="bottom" secondItem="cXb-Gz-slI" secondAttribute="bottom" id="9KJ-w0-Wa6"/>
+                            <constraint firstItem="P41-b9-Faq" firstAttribute="top" secondItem="1wf-bh-PbV" secondAttribute="bottom" constant="20" id="9cR-Zj-Hot"/>
                             <constraint firstItem="P41-b9-Faq" firstAttribute="top" secondItem="SDJ-91-rDB" secondAttribute="bottom" constant="130" id="CJY-IO-rvy"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="P41-b9-Faq" secondAttribute="trailing" constant="50" id="Fy9-D5-dgR"/>
                             <constraint firstItem="cXb-Gz-slI" firstAttribute="top" secondItem="3AY-6k-TOg" secondAttribute="bottom" constant="10" id="NVC-KK-S73"/>
                             <constraint firstItem="7el-yw-TwM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="Ocp-bM-Z4n"/>
+                            <constraint firstItem="1wf-bh-PbV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="RBR-T2-B1O"/>
                             <constraint firstItem="N8X-46-2CC" firstAttribute="top" secondItem="cXb-Gz-slI" secondAttribute="bottom" constant="10" id="SII-4X-eag"/>
                             <constraint firstItem="Y8W-Ig-Ltv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="SW3-3l-e4Y"/>
                             <constraint firstItem="3AY-6k-TOg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="SuI-BE-go6"/>
@@ -121,12 +134,13 @@
                             <constraint firstItem="QwS-Z1-IlL" firstAttribute="leading" secondItem="ruG-dJ-Rdf" secondAttribute="leading" id="mY4-hH-Zlp"/>
                             <constraint firstItem="HCx-zN-t7V" firstAttribute="bottom" secondItem="N8X-46-2CC" secondAttribute="bottom" id="o3k-gd-Mur"/>
                             <constraint firstItem="QwS-Z1-IlL" firstAttribute="leading" secondItem="wWb-hK-D0y" secondAttribute="leading" id="syi-CL-Hs8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1wf-bh-PbV" secondAttribute="trailing" constant="50" id="tpj-cB-LB6"/>
                             <constraint firstItem="QwS-Z1-IlL" firstAttribute="bottom" secondItem="7el-yw-TwM" secondAttribute="bottom" id="v4c-bj-crU"/>
                             <constraint firstItem="Y8W-Ig-Ltv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="xHn-ZO-9qG"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="distanceLabel" destination="1Dn-Vd-jor" id="FW9-Yz-2CF"/>
+                        <outlet property="distanceLabel" destination="wWb-hK-D0y" id="prW-UX-Mot"/>
                         <outlet property="latitudeLabel" destination="ruG-dJ-Rdf" id="Ub5-p2-Kpp"/>
                         <outlet property="longtitudeLabel" destination="QwS-Z1-IlL" id="ymZ-9n-DoB"/>
                         <outlet property="myMapkit" destination="SDJ-91-rDB" id="j8c-Eb-ifb"/>
